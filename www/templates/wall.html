@@ -1,0 +1,24 @@
+<ion-view title="Wall">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+
+    <ion-list>
+      <ion-item ng-repeat="node in nodes" type="item-text-wrap" href="#/tab/event/{{event.id}}">
+        
+      	<div ng-if="isMessage(node)">
+       		<div ng-include src="'templates/message.html'"></div>
+   			</div>   
+
+      	<div ng-if="isEvent(node)">
+       		<div ng-include src="'templates/event.html'"></div>
+   			</div>      			
+
+      </ion-item>
+    </ion-list>
+
+
+  </ion-content>
+</ion-view>
